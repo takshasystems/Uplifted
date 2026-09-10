@@ -279,12 +279,21 @@ export function Home() {
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
             Ready to bring life skills to a school near you?
           </h2>
-          <Link
-            to="/get-involved"
-            className="inline-block bg-white text-[#C0143C] px-10 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-colors"
-          >
-            Partner With Us
-          </Link>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              to="/get-involved"
+              className="inline-block bg-white text-[#C0143C] px-10 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-colors shadow-lg"
+            >
+              Partner With Us
+            </Link>
+            <Link
+              to="/donate"
+              className="inline-flex items-center justify-center gap-2 border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-[#C0143C] transition-colors"
+            >
+              <Heart size={20} className="fill-current" />
+              Donate Online
+            </Link>
+          </div>
         </div>
       </section>
     </div>

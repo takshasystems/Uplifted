@@ -13,6 +13,7 @@ export function Navigation() {
     { path: "/curriculum", label: "Our Curriculum" },
     { path: "/how-it-works", label: "How It Works" },
     { path: "/journey", label: "Our Journey" },
+    { path: "/get-involved", label: "Get Involved" },
     { path: "/impact", label: "Impact" },
     { path: "/contact", label: "Contact" },
   ];
@@ -53,8 +54,8 @@ export function Navigation() {
               </Link>
             ))}
             <Link
-              to="/contact"
-              className="bg-[#C0143C] text-white px-6 py-2.5 rounded-full font-medium hover:bg-[#A01030] transition-colors"
+              to="/donate"
+              className="bg-[#C0143C] text-white px-6 py-2.5 rounded-full font-medium hover:bg-[#A01030] transition-colors shadow-sm"
             >
               Donate
             </Link>
@@ -87,7 +88,7 @@ export function Navigation() {
               </Link>
             ))}
             <Link
-              to="/contact"
+              to="/donate"
               onClick={() => setIsOpen(false)}
               className="block bg-[#C0143C] text-white px-4 py-2.5 rounded-full font-medium text-center"
             >

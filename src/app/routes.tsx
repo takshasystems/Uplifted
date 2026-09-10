@@ -8,6 +8,7 @@ import { Journey } from "./pages/Journey";
 import { GetInvolved } from "./pages/GetInvolved";
 import { Impact } from "./pages/Impact";
 import { Contact } from "./pages/Contact";
+import { Donate } from "./pages/Donate";
 
 export const router = createBrowserRouter([
   {
@@ -22,6 +23,7 @@ export const router = createBrowserRouter([
       { path: "get-involved", Component: GetInvolved },
       { path: "impact", Component: Impact },
       { path: "contact", Component: Contact },
+      { path: "donate", Component: Donate },
     ],
   },
 ]);

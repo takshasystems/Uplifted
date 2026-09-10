@@ -34,6 +34,7 @@ export function Footer() {
               <li><Link to="/curriculum" className="text-gray-300 hover:text-[#C0143C] transition-colors">Our Curriculum</Link></li>
               <li><Link to="/how-it-works" className="text-gray-300 hover:text-[#C0143C] transition-colors">How It Works</Link></li>
               <li><Link to="/journey" className="text-gray-300 hover:text-[#C0143C] transition-colors">Our Journey</Link></li>
+              <li><Link to="/get-involved" className="text-gray-300 hover:text-[#C0143C] transition-colors">Get Involved</Link></li>
               <li><Link to="/impact" className="text-gray-300 hover:text-[#C0143C] transition-colors">Impact</Link></li>
             </ul>
           </div>
@@ -42,16 +43,16 @@ export function Footer() {
           <div>
             <h3 className="font-semibold mb-4">Get Involved</h3>
             <ul className="space-y-2 text-sm text-gray-300">
-              <li>For Schools</li>
-              <li>For NGOs & CSR</li>
-              <li>For Volunteers</li>
-              <li>For Donors</li>
+              <li><Link to="/contact?role=school" className="hover:text-[#C0143C] transition-colors">For Schools</Link></li>
+              <li><Link to="/contact?role=ngo" className="hover:text-[#C0143C] transition-colors">For NGOs & CSR</Link></li>
+              <li><Link to="/impact#volunteer" className="hover:text-[#C0143C] transition-colors">For Volunteers</Link></li>
+              <li><Link to="/donate" className="hover:text-[#C0143C] transition-colors">For Donors</Link></li>
             </ul>
             <Link
-              to="/get-involved"
-              className="inline-block mt-4 bg-[#C0143C] text-white px-4 py-2 rounded-full font-medium text-sm hover:bg-[#A01030] transition-colors"
+              to="/donate"
+              className="inline-block mt-4 bg-[#C0143C] text-white px-5 py-2 rounded-full font-medium text-sm hover:bg-[#A01030] transition-colors shadow-sm"
             >
-              Partner With Us
+              Donate Now
             </Link>
           </div>
 
@@ -66,9 +67,18 @@ export function Footer() {
                 <Mail size={24} />
               </a>
             </div>
-            <Link to="/contact" className="text-sm text-gray-300 hover:text-[#C0143C] transition-colors">
-              Contact Us
-            </Link>
+            <div className="space-y-2 text-sm">
+              <div>
+                <Link to="/contact" className="text-gray-300 hover:text-[#C0143C] transition-colors">
+                  Contact Us
+                </Link>
+              </div>
+              <div>
+                <Link to="/donate" className="text-[#FF6B8B] font-medium hover:underline">
+                  Support / Donate
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
 

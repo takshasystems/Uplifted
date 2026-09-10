@@ -1,5 +1,8 @@
 import { Link } from "react-router";
 import React, { useState } from "react";
+import { toast } from "sonner";
+import { CheckCircle2, Heart } from "lucide-react";
+import { fireConfetti } from "../utils/razorpay";
 import heroPhoto from "@/imports/Uplifted-4/bd1001397395c23659c95463de50a2cd3827340e.png";
 import galleryPhoto1 from "@/imports/Uplifted-4/e52644c7560f782fc82fede227bb72f1dcc460be.png";
 import galleryPhoto2 from "@/imports/Uplifted-4/266ff0dbee4503ef76b9299768f449cafa54576e.png";
@@ -16,12 +19,35 @@ export function Impact() {
     availability: "",
     experience: ""
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleVolunteerSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Volunteer form submitted:", volunteerForm);
-    alert("Thank you for your interest! We'll contact you soon about volunteer opportunities.");
-    setVolunteerForm({ name: "", email: "", phone: "", availability: "", experience: "" });
+
+    if (!volunteerForm.name.trim()) {
+      toast.error("Please enter your name");
+      return;
+    }
+
+    if (!volunteerForm.email.trim() || !volunteerForm.email.includes("@")) {
+      toast.error("Please enter a valid email address");
+      return;
+    }
+
+    if (!volunteerForm.phone.trim() || volunteerForm.phone.length < 10) {
+      toast.error("Please enter a valid phone number");
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    setTimeout(() => {
+      setIsSubmitting(false);
+      setIsSubmitted(true);
+      fireConfetti();
+      toast.success("Thank you for your application! We will contact you soon.");
+    }, 600);
   };
 
   const handleVolunteerChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -103,107 +129,139 @@ export function Impact() {
       </section>
 
       {/* Volunteer Your Time */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white" id="volunteer">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold mb-4 text-center">Volunteer Your Time</h2>
           <p className="text-center text-gray-700 mb-12 max-w-2xl mx-auto">
             Join our team of dedicated volunteers and help empower children with life skills. Fill out the form below and we'll get in touch with you.
           </p>
-          <div className="bg-[#F9F9F9] p-8 rounded-2xl">
-            <form onSubmit={handleVolunteerSubmit} className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="v-name" className="block text-sm font-semibold mb-2">
-                    Full Name *
-                  </label>
-                  <input
-                    type="text"
-                    id="v-name"
-                    name="name"
-                    required
-                    value={volunteerForm.name}
-                    onChange={handleVolunteerChange}
-                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#C0143C] focus:outline-none transition-colors bg-white"
-                    placeholder="Your full name"
-                  />
+          <div className="bg-[#F9F9F9] p-8 rounded-2xl border border-gray-200">
+            {isSubmitted ? (
+              <div className="text-center py-10 space-y-4">
+                <div className="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-2">
+                  <CheckCircle2 size={36} />
                 </div>
-                <div>
-                  <label htmlFor="v-email" className="block text-sm font-semibold mb-2">
-                    Email *
-                  </label>
-                  <input
-                    type="email"
-                    id="v-email"
-                    name="email"
-                    required
-                    value={volunteerForm.email}
-                    onChange={handleVolunteerChange}
-                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#C0143C] focus:outline-none transition-colors bg-white"
-                    placeholder="your.email@example.com"
-                  />
-                </div>
-              </div>
-
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="v-phone" className="block text-sm font-semibold mb-2">
-                    Phone Number *
-                  </label>
-                  <input
-                    type="tel"
-                    id="v-phone"
-                    name="phone"
-                    required
-                    value={volunteerForm.phone}
-                    onChange={handleVolunteerChange}
-                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#C0143C] focus:outline-none transition-colors bg-white"
-                    placeholder="+91 XXXXX XXXXX"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="v-availability" className="block text-sm font-semibold mb-2">
-                    Availability *
-                  </label>
-                  <select
-                    id="v-availability"
-                    name="availability"
-                    required
-                    value={volunteerForm.availability}
-                    onChange={handleVolunteerChange}
-                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#C0143C] focus:outline-none transition-colors bg-white"
+                <h3 className="text-2xl font-bold text-gray-900">Application Submitted!</h3>
+                <p className="text-gray-600 text-sm max-w-md mx-auto leading-relaxed">
+                  Thank you for stepping up to make a difference! Our volunteer coordinator will review your application and reach out to you at <span className="text-[#C0143C] font-semibold">{volunteerForm.email}</span> with orientation details.
+                </p>
+                <div className="pt-4">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setVolunteerForm({ name: "", email: "", phone: "", availability: "", experience: "" });
+                      setIsSubmitted(false);
+                    }}
+                    className="bg-[#C0143C] hover:bg-[#A01030] text-white px-8 py-3 rounded-full text-sm font-semibold transition-colors shadow-sm"
                   >
-                    <option value="">Select your availability</option>
-                    <option value="weekends">Weekends Only</option>
-                    <option value="weekdays">Weekdays</option>
-                    <option value="flexible">Flexible Schedule</option>
-                    <option value="once-a-month">Once a Month</option>
-                  </select>
+                    Submit Another Application
+                  </button>
                 </div>
               </div>
+            ) : (
+              <form onSubmit={handleVolunteerSubmit} className="space-y-6">
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <label htmlFor="v-name" className="block text-sm font-semibold mb-2">
+                      Full Name *
+                    </label>
+                    <input
+                      type="text"
+                      id="v-name"
+                      name="name"
+                      required
+                      value={volunteerForm.name}
+                      onChange={handleVolunteerChange}
+                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#C0143C] focus:outline-none transition-colors bg-white"
+                      placeholder="Your full name"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="v-email" className="block text-sm font-semibold mb-2">
+                      Email *
+                    </label>
+                    <input
+                      type="email"
+                      id="v-email"
+                      name="email"
+                      required
+                      value={volunteerForm.email}
+                      onChange={handleVolunteerChange}
+                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#C0143C] focus:outline-none transition-colors bg-white"
+                      placeholder="your.email@example.com"
+                    />
+                  </div>
+                </div>
 
-              <div>
-                <label htmlFor="v-experience" className="block text-sm font-semibold mb-2">
-                  Tell us about yourself and why you want to volunteer *
-                </label>
-                <textarea
-                  id="v-experience"
-                  name="experience"
-                  required
-                  value={volunteerForm.experience}
-                  onChange={handleVolunteerChange}
-                  rows={4}
-                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#C0143C] focus:outline-none transition-colors resize-none bg-white"
-                  placeholder="Share your background, teaching experience (if any), and what motivates you to volunteer with UpliftEd..."
-                />
-              </div>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <label htmlFor="v-phone" className="block text-sm font-semibold mb-2">
+                      Phone Number *
+                    </label>
+                    <input
+                      type="tel"
+                      id="v-phone"
+                      name="phone"
+                      required
+                      value={volunteerForm.phone}
+                      onChange={handleVolunteerChange}
+                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#C0143C] focus:outline-none transition-colors bg-white"
+                      placeholder="+91 XXXXX XXXXX"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="v-availability" className="block text-sm font-semibold mb-2">
+                      Availability *
+                    </label>
+                    <select
+                      id="v-availability"
+                      name="availability"
+                      required
+                      value={volunteerForm.availability}
+                      onChange={handleVolunteerChange}
+                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#C0143C] focus:outline-none transition-colors bg-white"
+                    >
+                      <option value="">Select your availability</option>
+                      <option value="weekends">Weekends Only</option>
+                      <option value="weekdays">Weekdays</option>
+                      <option value="flexible">Flexible Schedule</option>
+                      <option value="once-a-month">Once a Month</option>
+                    </select>
+                  </div>
+                </div>
 
-              <button
-                type="submit"
-                className="w-full bg-[#C0143C] text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-[#A01030] transition-colors"
-              >
-                Submit Application
-              </button>
-            </form>
+                <div>
+                  <label htmlFor="v-experience" className="block text-sm font-semibold mb-2">
+                    Tell us about yourself and why you want to volunteer *
+                  </label>
+                  <textarea
+                    id="v-experience"
+                    name="experience"
+                    required
+                    value={volunteerForm.experience}
+                    onChange={handleVolunteerChange}
+                    rows={4}
+                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#C0143C] focus:outline-none transition-colors resize-none bg-white"
+                    placeholder="Share your background, teaching experience (if any), and what motivates you to volunteer with UpliftEd..."
+                  />
+                </div>
+
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full bg-[#C0143C] text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-[#A01030] disabled:bg-gray-300 transition-colors flex items-center justify-center gap-2 cursor-pointer shadow-md"
+                >
+                  {isSubmitting ? (
+                    <>
+                      <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                      Submitting Application...
+                    </>
+                  ) : (
+                    "Submit Application"
+                  )}
+                </button>
+              </form>
+            )}
           </div>
         </div>
       </section>
@@ -244,12 +302,21 @@ export function Impact() {
           <p className="text-xl mb-8 opacity-90">
             Join us as a volunteer, partner with your school, or support our work.
           </p>
-          <Link
-            to="/get-involved"
-            className="inline-block bg-white text-[#C0143C] px-10 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-colors"
-          >
-            Get Involved
-          </Link>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              to="/get-involved"
+              className="inline-block bg-white text-[#C0143C] px-10 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-colors shadow-lg"
+            >
+              Get Involved
+            </Link>
+            <Link
+              to="/donate"
+              className="inline-flex items-center justify-center gap-2 border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-[#C0143C] transition-colors"
+            >
+              <Heart size={20} className="fill-current" />
+              Donate to the Cause
+            </Link>
+          </div>
         </div>
       </section>
     </div>

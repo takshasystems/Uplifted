@@ -1,4 +1,5 @@
-import { MessageCircle, Brain, Users, Lightbulb } from "lucide-react";
+import { MessageCircle, Brain, Users, Lightbulb, ArrowRight, Heart } from "lucide-react";
+import { Link } from "react-router";
 import heroPhoto from "@/imports/Uplifted-1/80ccefc521154b2e0e7dcba4c629ea6bb1fb7b00.png";
 
 export function Curriculum() {
@@ -166,6 +167,34 @@ export function Curriculum() {
                 {value}
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Curriculum CTA */}
+      <section className="py-20 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Interested in Bringing This to Your School or Center?
+          </h2>
+          <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+            We provide all curriculum modules, teacher guides, and trained volunteers at zero cost to government schools.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              to="/contact?role=school"
+              className="inline-flex items-center justify-center gap-2 bg-[#C0143C] text-white px-8 py-3.5 rounded-full font-bold text-base hover:bg-[#A01030] transition-colors shadow-md"
+            >
+              Request School Partnership
+              <ArrowRight size={18} />
+            </Link>
+            <Link
+              to="/donate"
+              className="inline-flex items-center justify-center gap-2 border-2 border-[#C0143C] text-[#C0143C] px-8 py-3.5 rounded-full font-bold text-base hover:bg-[#C0143C] hover:text-white transition-colors"
+            >
+              <Heart size={18} className="fill-current" />
+              Sponsor Learning Modules
+            </Link>
           </div>
         </div>
       </section>

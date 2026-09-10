@@ -34,7 +34,7 @@ export function GetInvolved() {
                 <li>• Support from the UpliftEd Planning Committee</li>
               </ul>
               <Link
-                to="/contact"
+                to="/contact?role=school"
                 className="block text-center bg-[#C0143C] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#A01030] transition-colors"
               >
                 Partner With Our School
@@ -59,7 +59,7 @@ export function GetInvolved() {
                 <li>• Co-branded program opportunities</li>
               </ul>
               <Link
-                to="/contact"
+                to="/contact?role=ngo"
                 className="block text-center bg-[#C0143C] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#A01030] transition-colors"
               >
                 Explore a Partnership
@@ -90,7 +90,7 @@ export function GetInvolved() {
                 <li>• Commit to at least one session per month</li>
               </ul>
               <Link
-                to="/contact"
+                to="/impact#volunteer"
                 className="block text-center bg-[#C0143C] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#A01030] transition-colors"
               >
                 Join as a Volunteer
@@ -121,8 +121,8 @@ export function GetInvolved() {
                 <li>• Activity kits for new volunteer batches</li>
               </ul>
               <Link
-                to="/contact"
-                className="block text-center bg-[#C0143C] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#A01030] transition-colors"
+                to="/donate"
+                className="block text-center bg-[#C0143C] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#A01030] transition-colors shadow-sm"
               >
                 Support the Initiative
               </Link>
