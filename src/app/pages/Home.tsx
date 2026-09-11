@@ -231,7 +231,7 @@ export function Home() {
 
                 {/* Reel preview */}
                 <a
-                  href="https://www.instagram.com/uplifted_initiative/"
+                  href="https://www.instagram.com/reel/DZwzp0wO5YE/?stkn=MWM5Y3kwN294anBpYw=="
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group block relative aspect-square overflow-hidden bg-[#111111]"
