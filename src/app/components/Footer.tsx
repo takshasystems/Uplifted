@@ -60,7 +60,7 @@ export function Footer() {
           <div>
             <h3 className="font-semibold mb-4">Connect</h3>
             <div className="flex gap-4 mb-4">
-              <a href="https://www.instagram.com/uplifted.rajkot/" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-[#C0143C] transition-colors" title="Instagram">
+              <a href="https://www.instagram.com/uplifted_initiative/" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-[#C0143C] transition-colors" title="Instagram">
                 <Instagram size={24} />
               </a>
               <a href="mailto:contact@uplifted.org" className="text-gray-300 hover:text-[#C0143C] transition-colors" title="Email Us">

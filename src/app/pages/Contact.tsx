@@ -283,7 +283,7 @@ export function Contact() {
                 <h3 className="font-bold text-lg text-gray-900 mb-3">Connect With Us</h3>
                 <div className="flex gap-4">
                   <a
-                    href="https://www.instagram.com/uplifted.rajkot/"
+                    href="https://www.instagram.com/uplifted_initiative/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="bg-[#C0143C]/10 p-3.5 rounded-full hover:bg-[#C0143C] hover:text-white transition-colors group"

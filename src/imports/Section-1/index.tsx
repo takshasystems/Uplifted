@@ -59,7 +59,7 @@ function Paragraph2() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Paragraph">
       <p className="[word-break:break-word] font-['DM_Sans:SemiBold',sans-serif] font-semibold leading-[17.5px] relative shrink-0 text-[#111] text-[14px] whitespace-nowrap" style={{ fontVariationSettings: '"opsz" 14' }}>
-        uplifted.rajkot
+        uplifted_initiative
       </p>
     </div>
   );
@@ -189,7 +189,7 @@ function Paragraph4() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Paragraph">
       <p className="[word-break:break-word] font-['DM_Sans:Medium',sans-serif] font-medium leading-[20px] relative shrink-0 text-[#111] text-[14px] whitespace-nowrap" style={{ fontVariationSettings: '"opsz" 14' }}>
-        uplifted.rajkot
+        uplifted_initiative
       </p>
     </div>
   );

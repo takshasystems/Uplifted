@@ -216,11 +216,11 @@ export function Home() {
                     <Instagram className="text-white" size={16} />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <p className="text-[#111111] text-sm font-semibold leading-tight">uplifted.rajkot</p>
+                    <p className="text-[#111111] text-sm font-semibold leading-tight">uplifted_initiative</p>
                     <p className="text-[#99a1af] text-xs">Rajkot, Gujarat</p>
                   </div>
                   <a
-                    href="https://www.instagram.com/uplifted.rajkot/"
+                    href="https://www.instagram.com/uplifted_initiative/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-[#C0143C] text-xs font-bold border border-[rgba(192,20,60,0.4)] px-3 py-1 rounded-full hover:bg-[#C0143C] hover:text-white transition-colors shrink-0"
@@ -231,7 +231,7 @@ export function Home() {
 
                 {/* Reel preview */}
                 <a
-                  href="https://www.instagram.com/uplifted.rajkot/"
+                  href="https://www.instagram.com/uplifted_initiative/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group block relative aspect-square overflow-hidden bg-[#111111]"
@@ -254,10 +254,10 @@ export function Home() {
 
                 {/* Card footer */}
                 <div className="px-4 py-3">
-                  <p className="text-[#111111] text-sm font-medium mb-0.5">uplifted.rajkot</p>
+                  <p className="text-[#111111] text-sm font-medium mb-0.5">uplifted_initiative</p>
                   <p className="text-[#6a7282] text-xs leading-relaxed">Life skills for every child — every Saturday 🔴</p>
                   <a
-                    href="https://www.instagram.com/uplifted.rajkot/"
+                    href="https://www.instagram.com/uplifted_initiative/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="mt-3 w-full flex items-center justify-center gap-2 bg-[#C0143C] text-white px-5 py-2.5 rounded-xl font-semibold text-sm hover:bg-[#A01030] transition-colors"
