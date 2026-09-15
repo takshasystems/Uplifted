@@ -82,8 +82,19 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-gray-700 mt-12 pt-8 text-center text-sm text-gray-400">
+        <div className="border-t border-gray-700 mt-12 pt-8 text-center text-sm text-gray-400 space-y-1">
           <p>&copy; {new Date().getFullYear()} UpliftEd. Building skills that last a lifetime.</p>
+          <p className="text-xs text-gray-400">
+            Developed by :{" "}
+            <a
+              href="https://www.vyuhasystems.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-white underline transition-colors font-medium"
+            >
+              Vyuha Systems
+            </a>
+          </p>
         </div>
       </div>
     </footer>
