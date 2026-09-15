@@ -1,8 +1,6 @@
 import { BookOpen, Share2, Users, Rocket } from "lucide-react";
 import heroPhoto from "@/imports/Uplifted-6/e066bc69fb710b883528facabc9efe477914b54d.png";
 import archiePhoto from "@/imports/Uplifted-6/f0eaa0ec47b5310d4137093945f35d79ca712134.png";
-import khushiPhoto from "@/imports/Uplifted-6/e358401d647553eaf2e80ae8bffa9dcd739f653d.png";
-import purniPhoto from "@/imports/Uplifted-6/355f5cfdaedb237431fb0f366f29d0a2bb70262e.png";
 
 export function About() {
   const values = [
@@ -94,28 +92,23 @@ export function About() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold mb-12 text-center">The Core Team</h2>
           <div className="grid md:grid-cols-3 gap-8 mb-16">
-            {/* Kunal Mehta - Rotary Member placeholder */}
-            <div className="text-center">
-              <div className="rounded-2xl overflow-hidden aspect-square mb-4" style={{ background: "linear-gradient(135deg, rgba(192,20,60,0.2) 0%, rgba(17,17,17,0.2) 100%)" }}>
-              </div>
-              <h3 className="text-xl font-bold">Kunal Mehta</h3>
-              <p className="text-gray-600">Executive Head ; Rotary Member</p>
+            {/* Rtn Kunal Mehta */}
+            <div className="bg-[#C0143C]/5 border-2 border-[#C0143C]/20 rounded-2xl p-8 text-center hover:border-[#C0143C] transition-colors flex flex-col justify-center items-center">
+              <h3 className="text-xl font-bold text-[#111111] mb-2">Rtn Kunal Mehta</h3>
+              <p className="text-[#C0143C] font-semibold text-sm mb-1">Executive Head</p>
+              <p className="text-gray-500 text-xs">Rotary Member</p>
             </div>
             {/* Khushi Joshi */}
-            <div className="text-center">
-              <div className="rounded-2xl overflow-hidden aspect-square mb-4">
-                <img src={khushiPhoto} alt="Khushi Joshi" className="w-full h-full object-cover" />
-              </div>
-              <h3 className="text-xl font-bold">Khushi Joshi</h3>
-              <p className="text-gray-600">Finance Manager ; TGES alumna</p>
+            <div className="bg-[#C0143C]/5 border-2 border-[#C0143C]/20 rounded-2xl p-8 text-center hover:border-[#C0143C] transition-colors flex flex-col justify-center items-center">
+              <h3 className="text-xl font-bold text-[#111111] mb-2">Khushi Joshi</h3>
+              <p className="text-[#C0143C] font-semibold text-sm mb-1">Finance Manager</p>
+              <p className="text-gray-500 text-xs">TGES alumna</p>
             </div>
             {/* Purni Mukherjee */}
-            <div className="text-center">
-              <div className="rounded-2xl overflow-hidden aspect-square mb-4">
-                <img src={purniPhoto} alt="Purni Mukherjee" className="w-full h-full object-cover" />
-              </div>
-              <h3 className="text-xl font-bold">Purni Mukherjee</h3>
-              <p className="text-gray-600">People Operations Manager ; TGES alumna</p>
+            <div className="bg-[#C0143C]/5 border-2 border-[#C0143C]/20 rounded-2xl p-8 text-center hover:border-[#C0143C] transition-colors flex flex-col justify-center items-center">
+              <h3 className="text-xl font-bold text-[#111111] mb-2">Purni Mukherjee</h3>
+              <p className="text-[#C0143C] font-semibold text-sm mb-1">People Operations Manager</p>
+              <p className="text-gray-500 text-xs">TGES alumna</p>
             </div>
           </div>
 
@@ -124,10 +117,10 @@ export function About() {
             <h3 className="text-2xl font-bold mb-8 text-center">The Committee</h3>
             <div className="grid md:grid-cols-4 gap-4">
               {[
-                { role: "Curriculum Head", names: ["Bharvi Parsaniya ; TGES alumna", "Dhruva Chug ; Rotary Member"], Icon: BookOpen },
-                { role: "Social Media Head", names: ["Sheekha Mehta ; TGES alumna", "Misri Nathwani ; Rotary Member"], Icon: Share2 },
-                { role: "Sessions Head", names: ["Nilesh Bhijani ; Rotary Member", "Sheetal Patel ; Rotary Member"], Icon: Users },
-                { role: "Events & Expansion Head", names: ["Nivetha Amlani ; Rotary Member", "Meera Kotecha ; Rotary Member"], Icon: Rocket },
+                { role: "Curriculum Head", names: ["Bharvi Parsaniya ; TGES alumna", "Ann Dhruva Chag ; Rotary Member"], Icon: BookOpen },
+                { role: "Social Media Head", names: ["Sheekha Mehta ; TGES alumna", "Annet Misri Nathwani; Rotary Member & TGES alumna"], Icon: Share2 },
+                { role: "Sessions Head", names: ["Rtn Nilesh Bhojani ; Rotary Member", "Ann Sheetal Patel ; Rotary Member"], Icon: Users },
+                { role: "Events & Expansion Head", names: ["Ann Nivetha Amlani ; Rotary Member", "Ann Meera Kotecha ; Rotary Member"], Icon: Rocket },
               ].map((item, index) => (
                 <div key={index} className="bg-[#C0143C]/5 border-2 border-[#C0143C]/20 rounded-xl p-6 text-center hover:border-[#C0143C] hover:bg-[#C0143C]/10 transition-colors">
                   <div className="bg-[#C0143C] text-white p-3 rounded-full inline-block mb-4">
