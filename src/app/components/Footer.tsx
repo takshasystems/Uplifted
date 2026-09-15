@@ -63,7 +63,7 @@ export function Footer() {
               <a href="https://www.instagram.com/uplifted_initiative/" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-[#C0143C] transition-colors" title="Instagram">
                 <Instagram size={24} />
               </a>
-              <a href="mailto:contact@uplifted.org" className="text-gray-300 hover:text-[#C0143C] transition-colors" title="Email Us">
+              <a href="mailto:upliftedinitiative@gmail.com" className="text-gray-300 hover:text-[#C0143C] transition-colors" title="Email Us">
                 <Mail size={24} />
               </a>
             </div>

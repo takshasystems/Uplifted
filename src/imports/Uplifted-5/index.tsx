@@ -589,7 +589,7 @@ function Paragraph2() {
     <div className="h-[28px] relative shrink-0 w-[158.6px]" data-name="Paragraph">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start pt-[4px] relative size-full">
         <p className="[word-break:break-word] font-['DM_Sans:9pt_Regular',sans-serif] font-normal leading-[24px] relative shrink-0 text-[#364153] text-[16px] whitespace-nowrap" style={{ fontVariationSettings: '"opsz" 9' }}>
-          contact@uplifted.org
+          upliftedinitiative@gmail.com
         </p>
       </div>
     </div>
@@ -1051,7 +1051,7 @@ function Paragraph11() {
   return (
     <div className="content-stretch flex flex-col items-center opacity-75 relative shrink-0 w-full" data-name="Paragraph">
       <p className="[word-break:break-word] font-['DM_Sans:9pt_Regular',sans-serif] font-normal leading-[20px] relative shrink-0 text-[14px] text-center text-white whitespace-nowrap" style={{ fontVariationSettings: '"opsz" 9' }}>
-        For donation inquiries or to discuss partnership opportunities, please contact us at contact@uplifted.org
+        For donation inquiries or to discuss partnership opportunities, please contact us at upliftedinitiative@gmail.com
       </p>
     </div>
   );

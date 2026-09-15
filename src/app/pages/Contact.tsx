@@ -272,8 +272,8 @@ export function Contact() {
                   </div>
                   <div>
                     <h3 className="font-bold text-gray-900 mb-1">Email</h3>
-                    <a href="mailto:contact@uplifted.org" className="text-gray-600 hover:text-[#C0143C] text-sm transition-colors">
-                      contact@uplifted.org
+                    <a href="mailto:upliftedinitiative@gmail.com" className="text-gray-600 hover:text-[#C0143C] text-sm transition-colors">
+                      upliftedinitiative@gmail.com
                     </a>
                   </div>
                 </div>
@@ -292,7 +292,7 @@ export function Contact() {
                     <Instagram className="text-[#C0143C] group-hover:text-white" size={24} />
                   </a>
                   <a
-                    href="mailto:contact@uplifted.org"
+                    href="mailto:upliftedinitiative@gmail.com"
                     className="bg-[#C0143C]/10 p-3.5 rounded-full hover:bg-[#C0143C] hover:text-white transition-colors group"
                     title="Email Us"
                   >

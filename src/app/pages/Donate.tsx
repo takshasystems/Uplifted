@@ -469,8 +469,8 @@ export function Donate() {
 
                 <div className="mt-4 pt-4 border-t border-gray-100 flex items-center justify-between text-xs text-gray-500">
                   <span>Questions?</span>
-                  <a href="mailto:contact@uplifted.org" className="text-[#C0143C] font-semibold hover:underline">
-                    contact@uplifted.org
+                  <a href="mailto:upliftedinitiative@gmail.com" className="text-[#C0143C] font-semibold hover:underline">
+                    upliftedinitiative@gmail.com
                   </a>
                 </div>
               </div>
