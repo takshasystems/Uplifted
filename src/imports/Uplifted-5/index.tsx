@@ -980,7 +980,7 @@ function Paragraph7() {
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start relative size-full">
         <p className="[word-break:break-word] font-['DM_Sans:Bold',sans-serif] font-bold leading-[0] relative shrink-0 text-[0px] text-white whitespace-nowrap" style={{ fontVariationSettings: '"opsz" 14' }}>
           <span className="leading-[24px] text-[16px]">Account Name:</span>
-          <span className="font-['DM_Sans:9pt_Regular',sans-serif] font-normal leading-[24px] text-[16px]" style={{ fontVariationSettings: '"opsz" 9' }}>{` UpliftEd Initiative`}</span>
+          <span className="font-['DM_Sans:9pt_Regular',sans-serif] font-normal leading-[24px] text-[16px]" style={{ fontVariationSettings: '"opsz" 9' }}>{` ROTARY CLUB OF RAJKOT GREATER CHARITABLE TRUST`}</span>
         </p>
       </div>
     </div>
@@ -993,7 +993,7 @@ function Paragraph8() {
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start relative size-full">
         <p className="[word-break:break-word] font-['DM_Sans:Bold',sans-serif] font-bold leading-[0] relative shrink-0 text-[0px] text-white whitespace-nowrap" style={{ fontVariationSettings: '"opsz" 14' }}>
           <span className="leading-[24px] text-[16px]">Bank:</span>
-          <span className="font-['DM_Sans:9pt_Regular',sans-serif] font-normal leading-[24px] text-[16px]" style={{ fontVariationSettings: '"opsz" 9' }}>{` [Bank Name]`}</span>
+          <span className="font-['DM_Sans:9pt_Regular',sans-serif] font-normal leading-[24px] text-[16px]" style={{ fontVariationSettings: '"opsz" 9' }}>{` Bank of Baroda (TAGORE MARG RAJKOT)`}</span>
         </p>
       </div>
     </div>
@@ -1006,7 +1006,7 @@ function Paragraph9() {
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start relative size-full">
         <p className="[word-break:break-word] font-['DM_Sans:Bold',sans-serif] font-bold leading-[0] relative shrink-0 text-[0px] text-white whitespace-nowrap" style={{ fontVariationSettings: '"opsz" 14' }}>
           <span className="leading-[24px] text-[16px]">Account Number:</span>
-          <span className="font-['DM_Sans:9pt_Regular',sans-serif] font-normal leading-[24px] text-[16px]" style={{ fontVariationSettings: '"opsz" 9' }}>{` [Account Number]`}</span>
+          <span className="font-['DM_Sans:9pt_Regular',sans-serif] font-normal leading-[24px] text-[16px]" style={{ fontVariationSettings: '"opsz" 9' }}>{` 03610100004236`}</span>
         </p>
       </div>
     </div>
@@ -1019,7 +1019,7 @@ function Paragraph10() {
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start relative size-full">
         <p className="[word-break:break-word] font-['DM_Sans:Bold',sans-serif] font-bold leading-[0] relative shrink-0 text-[0px] text-white whitespace-nowrap" style={{ fontVariationSettings: '"opsz" 14' }}>
           <span className="leading-[24px] text-[16px]">IFSC Code:</span>
-          <span className="font-['DM_Sans:9pt_Regular',sans-serif] font-normal leading-[24px] text-[16px]" style={{ fontVariationSettings: '"opsz" 9' }}>{` [IFSC Code]`}</span>
+          <span className="font-['DM_Sans:9pt_Regular',sans-serif] font-normal leading-[24px] text-[16px]" style={{ fontVariationSettings: '"opsz" 9' }}>{` BARB0TAGORE`}</span>
         </p>
       </div>
     </div>

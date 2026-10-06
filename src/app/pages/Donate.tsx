@@ -10,9 +10,12 @@ import {
   HelpCircle, 
   Building, 
   CreditCard,
-  QrCode
+  QrCode,
+  Copy,
+  Check
 } from "lucide-react";
 import { toast } from "sonner";
+import upiQrCode from "@/assets/upi_qr_code.jpg";
 import { 
   initiateRazorpayPayment, 
   PaymentSuccessResponse, 
@@ -52,6 +55,14 @@ export function Donate() {
   const [isCustom, setIsCustom] = useState<boolean>(false);
   const [isProcessing, setIsProcessing] = useState<boolean>(false);
   const [successData, setSuccessData] = useState<PaymentSuccessResponse | null>(null);
+  const [copiedField, setCopiedField] = useState<string | null>(null);
+
+  const handleCopy = (text: string, label: string) => {
+    navigator.clipboard.writeText(text);
+    setCopiedField(label);
+    toast.success(`${label} copied to clipboard!`);
+    setTimeout(() => setCopiedField(null), 2000);
+  };
 
   const [donorForm, setDonorForm] = useState({
     name: "",
@@ -438,32 +449,96 @@ export function Donate() {
                 </ul>
               </div>
 
-              {/* Direct Bank Transfer / UPI Details */}
+              {/* Scan & Pay via UPI QR Code */}
+              <div className="bg-white rounded-3xl p-6 border border-gray-200 shadow-sm text-center">
+                <div className="flex items-center justify-center gap-2 font-bold text-gray-900 mb-2">
+                  <QrCode size={20} className="text-[#C0143C]" />
+                  <h4 className="text-base">Scan & Pay via UPI QR</h4>
+                </div>
+                <p className="text-xs text-gray-600 mb-4">
+                  Scan using GPay, PhonePe, Paytm, BHIM, or any UPI app
+                </p>
+                <div className="inline-block p-3 bg-gray-50 rounded-2xl border border-gray-100 shadow-inner">
+                  <img
+                    src={upiQrCode}
+                    alt="UpliftEd UPI QR Code"
+                    className="w-52 h-52 mx-auto object-contain rounded-xl"
+                  />
+                </div>
+                <div className="mt-3 text-xs text-gray-600 font-medium">
+                  <span className="text-gray-400">Account Name: </span>
+                  <span className="font-semibold text-gray-900 block mt-0.5">ROTARY CLUB OF RAJKOT GREATER CHARITABLE TRUST</span>
+                </div>
+              </div>
+
+              {/* Direct Bank Transfer / NEFT / RTGS / IMPS */}
               <div className="bg-white rounded-3xl p-6 border border-gray-200 shadow-sm">
                 <div className="flex items-center gap-2 font-bold text-gray-900 mb-3">
                   <Building size={18} className="text-[#C0143C]" />
-                  <h4>Direct Bank Transfer (NEFT/RTGS)</h4>
+                  <h4 className="text-base">Direct Bank Transfer (NEFT/RTGS)</h4>
                 </div>
                 <p className="text-xs text-gray-600 mb-4 leading-relaxed">
                   Prefer direct transfer or institutional donation? Use these verified account details:
                 </p>
 
-                <div className="space-y-2 bg-gray-50 p-4 rounded-xl text-xs text-gray-700 font-mono">
-                  <div className="flex justify-between">
+                <div className="space-y-3 bg-gray-50 p-4 rounded-2xl text-xs text-gray-700">
+                  <div className="flex flex-col pb-2.5 border-b border-gray-200/60 gap-1">
                     <span className="text-gray-500 font-sans">Account Name:</span>
-                    <span className="font-bold">UpliftEd Initiative</span>
+                    <span className="font-bold text-gray-900 leading-snug">
+                      ROTARY CLUB OF RAJKOT GREATER CHARITABLE TRUST
+                    </span>
                   </div>
-                  <div className="flex justify-between">
+
+                  <div className="flex justify-between items-center pb-2.5 border-b border-gray-200/60">
                     <span className="text-gray-500 font-sans">Bank:</span>
-                    <span>State Bank of India</span>
+                    <span className="font-semibold text-gray-900">Bank of Baroda</span>
                   </div>
-                  <div className="flex justify-between">
+
+                  <div className="flex justify-between items-center pb-2.5 border-b border-gray-200/60">
+                    <span className="text-gray-500 font-sans">Branch Name:</span>
+                    <span className="font-medium text-gray-800">TAGORE MARG RAJKOT</span>
+                  </div>
+
+                  <div className="flex justify-between items-center pb-2.5 border-b border-gray-200/60">
                     <span className="text-gray-500 font-sans">Account No:</span>
-                    <span className="font-bold">Contact via email</span>
+                    <div className="flex items-center gap-2">
+                      <span className="font-bold font-mono text-gray-900 text-sm">03610100004236</span>
+                      <button
+                        type="button"
+                        onClick={() => handleCopy("03610100004236", "Account Number")}
+                        className="p-1 text-gray-500 hover:text-[#C0143C] transition-colors rounded"
+                        title="Copy Account Number"
+                      >
+                        {copiedField === "Account Number" ? <Check size={14} className="text-emerald-600" /> : <Copy size={14} />}
+                      </button>
+                    </div>
                   </div>
-                  <div className="flex justify-between">
+
+                  <div className="flex justify-between items-center pb-2.5 border-b border-gray-200/60">
                     <span className="text-gray-500 font-sans">IFSC Code:</span>
-                    <span>SBIN0001234</span>
+                    <div className="flex items-center gap-2">
+                      <span className="font-bold font-mono text-gray-900 text-sm">BARB0TAGORE</span>
+                      <button
+                        type="button"
+                        onClick={() => handleCopy("BARB0TAGORE", "IFSC Code")}
+                        className="p-1 text-gray-500 hover:text-[#C0143C] transition-colors rounded"
+                        title="Copy IFSC Code (5th char is zero)"
+                      >
+                        {copiedField === "IFSC Code" ? <Check size={14} className="text-emerald-600" /> : <Copy size={14} />}
+                      </button>
+                    </div>
+                  </div>
+
+                  <div className="flex justify-between items-center pb-2.5 border-b border-gray-200/60">
+                    <span className="text-gray-500 font-sans">MICR Code:</span>
+                    <span className="font-mono text-gray-800">360012013</span>
+                  </div>
+
+                  <div className="flex flex-col gap-1 pt-0.5">
+                    <span className="text-gray-500 font-sans">Branch Address:</span>
+                    <span className="text-gray-700 text-[11px] leading-relaxed">
+                      TAGORE MARG RUXMANI BUILDING NEAR ASTRON CINEMA RAJKOT, RAJKOT, GUJARAT, INDIA
+                    </span>
                   </div>
                 </div>
 
